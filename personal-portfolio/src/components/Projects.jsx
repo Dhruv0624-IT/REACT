@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+/* eslint-disable-next-line no-unused-vars */
 import { motion } from 'framer-motion';
 import { useScrollReveal } from '../hooks/useScrollReveal.js';
 import ProjectModal from './ProjectModal.jsx';
@@ -20,7 +21,7 @@ const PROJECTS = [
     tags: ['MERN-STACK'],
     description:
       'A secure file sharing system with role based authentication, file upload, and download functionality.',
-    role: 'Backend development, Authentication',
+    role: 'Frontend development, Authentication, UI/UX',
   },
   {
     id: 3,
@@ -48,6 +49,15 @@ const PROJECTS = [
     description:
       'A personal portfolio website to showcase my projects and skills.',
     role: 'Development and deployment',
+  },
+  {
+    id: 6,
+    title: 'Smart Parking System',
+    category: 'Web App',
+    tags: ['MERN-STACK'],
+    description:
+      'A smart parking system with real-time space availability, booking, and payment integration.',
+    role: 'Development and deployment ',
   },
 ];
 
