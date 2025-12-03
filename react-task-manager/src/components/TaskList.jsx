@@ -3,15 +3,26 @@ import { Typography, Box } from "@mui/material";
 import TaskCard from "./TaskCard";
 
 const TaskList = ({ tasks, onDelete, onToggle, onEdit }) => {
-  const pending = tasks.filter(t => !t.completed);
-  const completed = tasks.filter(t => t.completed);
+  const pending = tasks.filter((t) => !t.completed);
+  const completed = tasks.filter((t) => t.completed);
 
   return (
     <Box>
       {pending.length > 0 && (
         <>
-          <Typography variant="h6" sx={{ mt: 2 }}>⏳ Pending</Typography>
-          {pending.map(task => (
+          <Typography
+            variant="subtitle2"
+            sx={{
+              mt: 0.5,
+              mb: 0.5,
+              textTransform: "uppercase",
+              letterSpacing: 1,
+              color: "text.secondary"
+            }}
+          >
+            Pending
+          </Typography>
+          {pending.map((task) => (
             <TaskCard
               key={task.id}
               task={task}
@@ -24,8 +35,19 @@ const TaskList = ({ tasks, onDelete, onToggle, onEdit }) => {
       )}
       {completed.length > 0 && (
         <>
-          <Typography variant="h6" sx={{ mt: 3 }}>✅ Completed</Typography>
-          {completed.map(task => (
+          <Typography
+            variant="subtitle2"
+            sx={{
+              mt: 2,
+              mb: 0.5,
+              textTransform: "uppercase",
+              letterSpacing: 1,
+              color: "text.secondary"
+            }}
+          >
+            Completed
+          </Typography>
+          {completed.map((task) => (
             <TaskCard
               key={task.id}
               task={task}
