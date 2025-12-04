@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext"; 
+import { useAuth } from "../context/useAuth";
 import {
   FaSignInAlt,
   FaSignOutAlt,
@@ -22,7 +22,13 @@ function Navbar() {
     e.preventDefault();
     login(name, role);
     setShowModal(false);
-    navigate("/");
+
+    // Redirect based on role for smoother UX
+    if (role === "Admin") {
+      navigate("/dashboard");
+    } else {
+      navigate("/events");
+    }
   };
 
   return (
@@ -30,7 +36,7 @@ function Navbar() {
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow-sm px-4">
         <div className="container-fluid">
           <NavLink className="navbar-brand fw-bold" to="/">
-            🎉 EventHub
+            🎉 EventPlanner
           </NavLink>
 
           <button
@@ -50,11 +56,13 @@ function Navbar() {
                 </NavLink>
               </li>
 
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/add">
-                  <FaPlus className="me-1" /> Add Event
-                </NavLink>
-              </li>
+              {user?.role === "Admin" && (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/add">
+                    <FaPlus className="me-1" /> Add Event
+                  </NavLink>
+                </li>
+              )}
 
               <li className="nav-item">
                 <NavLink className="nav-link" to="/calendar">

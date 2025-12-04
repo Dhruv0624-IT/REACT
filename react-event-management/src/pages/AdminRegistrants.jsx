@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { exportToCSV } from "../utils/exportToCSV";
+import { exportToCSV } from "../utils/exportCSV";
 import "./AdminRegistrants.css"; // optional for custom styling
 
 const AdminRegistrants = () => {

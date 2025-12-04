@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const EventDetails = () => {
   const { id } = useParams();
@@ -18,6 +19,7 @@ const EventDetails = () => {
     const stored = JSON.parse(localStorage.getItem("events")) || [];
     const filtered = stored.filter((e) => e.id.toString() !== id);
     localStorage.setItem("events", JSON.stringify(filtered));
+    toast.success("Event deleted");
     navigate("/events");
   };
 
@@ -30,7 +32,10 @@ const EventDetails = () => {
         📅 {event.date} | 🕒 {event.time} | 📍 {event.location}
       </p>
       <p>{event.description}</p>
-      <p>🏷️ Tags: {event.tags.join(", ")}</p>
+      <p>
+        🏷️ Tags:{" "}
+        {event.tags && event.tags.length ? event.tags.join(", ") : "None"}
+      </p>
 
       <div className="mt-3">
         <Link to={`/edit/${event.id}`} className="btn btn-warning me-2">

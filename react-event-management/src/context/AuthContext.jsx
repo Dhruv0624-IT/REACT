@@ -1,9 +1,6 @@
 // src/context/AuthContext.jsx
-import React, { createContext, useContext, useState, useEffect } from "react";
-
-const AuthContext = createContext();
-
-export const useAuth = () => useContext(AuthContext);
+import React, { useState, useEffect } from "react";
+import AuthContext from "./authStore";
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -15,8 +12,9 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const login = (username, role) => {
-    const newUser = { username, role };
+  // Store user with "name" so it matches consumers like Navbar
+  const login = (name, role) => {
+    const newUser = { name, role };
     setUser(newUser);
     localStorage.setItem("user", JSON.stringify(newUser));
   };

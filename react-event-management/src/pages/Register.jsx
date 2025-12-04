@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import Calendar from "react-calendar";
 import { QRCode } from "react-qrcode-logo";
 import "react-calendar/dist/Calendar.css";
+import { toast } from "react-toastify";
 
 function Register() {
+  const { id: eventId } = useParams();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [submitted, setSubmitted] = useState(false);
 
@@ -15,7 +19,10 @@ function Register() {
     const registration = {
       name,
       email,
+      phone,
       date: selectedDate.toDateString(),
+      eventId: eventId || null,
+      status: "Pending",
     };
 
     // Save to localStorage (for example purposes)
@@ -25,10 +32,12 @@ function Register() {
     localStorage.setItem("registrations", JSON.stringify(registrations));
 
     setSubmitted(true);
+    toast.success("Registration successful");
 
     // Optionally reset form
     setName("");
     setEmail("");
+    setPhone("");
   };
 
   return (
@@ -57,6 +66,17 @@ function Register() {
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Enter your email"
+            />
+          </div>
+
+          <div className="col-md-6">
+            <label className="form-label">Phone</label>
+            <input
+              type="tel"
+              className="form-control"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="Enter your phone (optional)"
             />
           </div>
 

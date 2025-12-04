@@ -29,3 +29,98 @@ body {
     text-align: center;
   }
 }
+
+/* Calendar page */
+.react-calendar {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+}
+
+.react-calendar__tile {
+  padding: 0.75rem 0.5rem;
+}
+
+.calendar-has-event {
+  background-color: rgba(220, 53, 69, 0.15) !important;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #dc3545;
+}
+
+.calendar-has-event.react-calendar__tile--now {
+  box-shadow: 0 0 0 1px #dc3545;
+}
+
+/* Welcome / landing page */
+.welcome-hero {
+  min-height: calc(100vh - 56px);
+  background: linear-gradient(135deg, #f5f9ff 0%, #eef2ff 40%, #fdfbff 100%);
+  padding-bottom: 3rem;
+}
+
+.welcome-hero-card {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+/* Login page */
+.login-page {
+  min-height: calc(100vh - 56px);
+  background-image: url("https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.login-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.login-page .container {
+  position: relative;
+  z-index: 1;
+}
+
+.login-card {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+/* Event list cards */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.event-card-image {
+  height: 160px;
+  object-fit: cover;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+
+.event-tag {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background-color: rgba(13, 110, 253, 0.08);
+  color: #0d6efd;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.app-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: #6c757d;
+}

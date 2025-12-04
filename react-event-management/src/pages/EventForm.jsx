@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { QRCode } from "react-qrcode-logo";
+import { toast } from "react-toastify";
 
 function EventForm() {
   const { id } = useParams();
@@ -46,10 +47,12 @@ function EventForm() {
         e.id.toString() === id ? event : e
       );
       localStorage.setItem("events", JSON.stringify(updated));
+      toast.success("Event updated successfully");
     } else {
       const newEvent = { ...event, id: Date.now() };
       stored.push(newEvent);
       localStorage.setItem("events", JSON.stringify(stored));
+      toast.success("Event created successfully");
     }
 
     setShowQR(true);
