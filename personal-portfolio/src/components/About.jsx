@@ -61,7 +61,7 @@ const About = () => {
               </div>
               <div className="col-6">
                 <div className="stat-card glass-card text-center">
-                  <h3 className="display-6 fw-bold mb-0">2023</h3>
+                  <h3 className="display-6 fw-bold mb-0">2024</h3>
                   <p className="text-muted mb-0 small">Started web dev journey</p>
                 </div>
               </div>

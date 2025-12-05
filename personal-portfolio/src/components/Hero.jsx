@@ -74,7 +74,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55, duration: 0.6 }}
             >
-              <span className="badge rounded-pill bg-primary-subtle text-primary">
+              {/* <span className="badge rounded-pill bg-primary-subtle text-primary">
                 MERN Stack
               </span>
               <span className="badge rounded-pill bg-primary-subtle text-primary">
@@ -82,7 +82,7 @@ const Hero = () => {
               </span>
               <span className="badge rounded-pill bg-primary-subtle text-primary">
                 Framer Motion
-              </span>
+              </span> */}
             </motion.div>
           </div>
           <div className="col-lg-5 mt-5 mt-lg-0">
@@ -92,7 +92,9 @@ const Hero = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.7 }}
             >
-              <div className="hero-avatar mb-3" />
+              <div className="hero-avatar mb-3">
+                <img src="/My Pic .png" alt="Dhruv Desai" className="avatar-img" />
+              </div>
               <h3 className="mb-1">Dhruv Desai</h3>
               <p className="text-muted mb-3">MERN Stack Developer</p>
               <div className="d-flex justify-content-center gap-2 flex-wrap small text-muted">

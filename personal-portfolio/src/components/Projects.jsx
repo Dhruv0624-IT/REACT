@@ -31,6 +31,7 @@ const PROJECTS = [
     description:
       'A clean, responsive task manager with filtering, persistence, and a focus on minimal UI.',
     role: 'Design & implementation',
+    demo: 'https://daily-todo-planner.netlify.app/',
   },
   {
     id: 4,

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { useTheme } from '../context/ThemeContext.jsx';
 
-const sections = ['home', 'about', 'education', 'skills', 'projects', 'experience', 'contact'];
+const sections = ['home', 'about', 'education', 'skills', 'projects', 'experience', 'resume', 'contact'];
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
