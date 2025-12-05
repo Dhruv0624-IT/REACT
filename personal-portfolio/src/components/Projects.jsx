@@ -50,6 +50,7 @@ const PROJECTS = [
     description:
       'A personal portfolio website to showcase my projects and skills.',
     role: 'Development and deployment',
+    demo: 'https://personal-portfolio-dhruv.netlify.app/',
   },
   {
     id: 6,
